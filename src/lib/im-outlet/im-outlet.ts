@@ -21,7 +21,7 @@ export class ImOutletComponent extends Iwe7CoreComponent {
     set tpl(tpl: TemplateRef<any>) {
         this.template = tpl;
     }
-    list: any[] = [];
+    @Input() list: any[] = [];
     template: TemplateRef<any>;
 
     @Input() avatar: string = 'https://ustbhuangyi.github.io/better-scroll/static/img/fall.0e0be3c.jpeg';

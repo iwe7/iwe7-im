@@ -7,6 +7,15 @@
 | im-outlet | IM布局组件 |
 | im-form   | 消息填写发送 |
 
+im-outlet
+| 名称         | 说明       |
+|------------|----------|
+| getMsgUrl  | 消息更新接口地址 |
+| sendMsgUrl | 消息发送接口地址 |
+| avatar     | 我的头像     |
+| nickname   | 我的昵称     |
+| list       | 消息队列     |
+
 
 * 辅助布局
 

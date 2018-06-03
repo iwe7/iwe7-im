@@ -9,6 +9,7 @@ import { Iwe7CoreComponent } from 'iwe7-core';
 })
 export class ImContentDirective extends Iwe7CoreComponent {
     @Input() imContentOf: any[] = [];
+    @Input() imContentTemplate: TemplateRef<any>;
     constructor(
         @Optional()
         public outlet: ImOutletComponent,
@@ -18,7 +19,7 @@ export class ImContentDirective extends Iwe7CoreComponent {
         super();
         if (this.outlet) {
             this.getCyc('ngOnChanges').subscribe(res => {
-                this.outlet.setContent(this.imContentOf, this.template);
+                this.outlet.setContent(this.imContentOf, this.imContentTemplate || this.template);
             });
         }
     }
