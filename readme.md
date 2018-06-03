@@ -1,3 +1,5 @@
+![preview](./docs/Iwe7Mobile.png)
+
 在线聊天组件
 
 * 布局
