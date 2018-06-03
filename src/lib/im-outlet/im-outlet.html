@@ -1,0 +1,44 @@
+<div class="im-header">
+  <ng-content select="[imHeader]"></ng-content>
+  <ng-container #imHeader></ng-container>
+</div>
+<div class="im-main" betterScroll>
+  <div class="im-list">
+    <ng-container *ngIf="list">
+      <ng-container *ngFor="let item of list">
+        <ng-container *ngTemplateOutlet="template;context: {$implicit: item}"></ng-container>
+      </ng-container>
+    </ng-container>
+    <div class="h30"></div>
+  </div>
+</div>
+<div class="im-footer">
+  <ng-content select="[imFooter]"></ng-content>
+  <ng-container #imFooter></ng-container>
+</div>
+
+<ng-template #tpl let-item>
+  <ng-container *ngIf="item.type === 'mine'">
+    <div imMine>
+      <div imAvatar>
+        <img [src]="item.avatar" alt="">
+        <span imNickname>{{item.nickname}}</span>
+      </div>
+      <div imText>{{item.content}}</div>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="item.type === 'system'">
+    <div imSystem>
+      <span>{{item.content}}</span>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="item.type === 'message'">
+    <div imMessage>
+      <div imAvatar>
+        <img [src]="item.avatar" alt="">
+        <span imNickname>{{item.nickname}}</span>
+      </div>
+      <div imText>{{item.content}}</div>
+    </div>
+  </ng-container>
+</ng-template>

@@ -1,0 +1,21 @@
+im-form,
+.im-form {
+  display: flex;
+  height: 40px;
+  width: 100%;
+  input {
+    flex: 1;
+    height: 40px;
+    padding-left: 5px;
+    border: 0;
+    background-color: #fff;
+    border-radius: 3px;
+  }
+  .im-send {
+    height: 40px;
+    padding: 0 20px;
+    border: 0;
+    background-color: #5FB878;
+    color: #fff;
+  }
+}

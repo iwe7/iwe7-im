@@ -1,0 +1,131 @@
+$footerHeight: 40px;
+$mainHeight: calc(100vh - 40px);
+im-outlet {
+  display: flex;
+  flex-direction: column;
+  img {
+    border: 0;
+    vertical-align: bottom;
+  }
+  .im-main {
+    flex: 1;
+    overflow: hidden;
+    max-height: $mainHeight;
+    height: $mainHeight;
+    min-height: $mainHeight;
+    padding: 15px 15px 0px 15px;
+    box-sizing: border-box;
+  }
+  .im-footer {
+    height: $footerHeight;
+    background: #fff;
+  }
+  .im-list {
+    .im-message {
+      position: relative;
+      font-size: 0;
+      margin-bottom: 10px;
+      padding-left: 60px;
+      min-height: 68px;
+    }
+    .h30 {
+      height: 30px;
+    }
+    .im-text {
+      position: relative;
+      min-height: 22px;
+      line-height: 22px;
+      margin-top: 25px;
+      padding: 8px 15px;
+      background-color: #fff;
+      border-radius: 3px;
+      color: #333;
+      word-break: break-all;
+      display: inline-block;
+      vertical-align: top;
+      font-size: 15px;
+      &:after {
+        content: '';
+        position: absolute;
+        left: -10px;
+        top: 13px;
+        width: 0;
+        height: 0;
+        border-style: solid dashed dashed;
+        border-color: #fff transparent transparent;
+        overflow: hidden;
+        border-width: 10px;
+      }
+    }
+    .im-message-mine {
+      text-align: right;
+      padding-left: 0;
+      padding-right: 60px;
+      margin-left: 0;
+      .im-avatar {
+        left: auto;
+        right: 3px;
+        .im-nickname {
+          left: auto;
+          right: 60px;
+          text-align: right;
+        }
+      }
+      .im-text {
+        text-align: left;
+        background-color: #5FB878;
+        color: #fff;
+        &:after {
+          left: auto;
+          right: -10px;
+          border-top-color: #5FB878;
+        }
+      }
+    }
+    .im-avatar {
+      position: absolute;
+      left: 3px;
+      display: inline-block;
+      vertical-align: top;
+      font-size: 15px;
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+      }
+      .im-nickname {
+        position: absolute;
+        left: 60px;
+        top: -2px;
+        width: 500px;
+        line-height: 24px;
+        font-size: 12px;
+        white-space: nowrap;
+        color: #999;
+        text-align: left;
+        font-style: normal;
+      }
+    }
+    .im-system {
+      text-align: center;
+      margin: 20px 0 5px;
+      padding: 0;
+      position: relative;
+      font-size: 0;
+      list-style: none;
+      span {
+        display: inline-block;
+        line-height: 30px;
+        padding: 0 15px;
+        border-radius: 3px;
+        background-color: #ddd;
+        color: #fff;
+        font-size: 14px;
+        cursor: pointer;
+      }
+    }
+  }
+  * {
+    box-sizing: content-box;
+  }
+}
