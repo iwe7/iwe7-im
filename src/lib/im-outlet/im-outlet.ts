@@ -39,7 +39,9 @@ export class ImOutletComponent extends Iwe7CoreComponent {
 
     setContent(list: any, tpl: TemplateRef<any>) {
         this.getCyc('ngAfterViewInit').subscribe(() => {
-            this.list = list;
+            if (this.list) {
+                this.list = list;
+            }
             const now = new Date();
             this.list.push({
                 type: 'system',
