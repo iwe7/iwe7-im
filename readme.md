@@ -1,6 +1,6 @@
 在线聊天组件
 
-components
+* 布局
 
 | selector  | 说明     |
 |-----------|--------|
@@ -8,14 +8,16 @@ components
 | im-form   | 消息填写发送 |
 
 
-布局
+* 辅助布局
+
 | selector    | 说明  |
 |-------------|-----|
 | [imContent] | 内容区 |
 | [imHeader]  | 头部  |
 | [imFooter]  | 底部  |
 
-功能
+* 功能
+
 | selector            | 说明     |
 |---------------------|--------|
 | [imContentOf]       | 聊天内容列表 |
