@@ -1,3 +1,4 @@
+import { Injector } from '@angular/core';
 import { switchMap } from 'rxjs/operators';
 import { TemplateRef } from '@angular/core';
 import { ImOutletComponent } from './../im-outlet/im-outlet';
@@ -14,9 +15,10 @@ export class ImContentDirective extends Iwe7CoreComponent {
         @Optional()
         public outlet: ImOutletComponent,
         @Optional()
-        public template: TemplateRef<any>
+        public template: TemplateRef<any>,
+        injector: Injector
     ) {
-        super();
+        super(injector);
         if (this.outlet) {
             this.getCyc('ngOnChanges').subscribe(res => {
                 this.outlet.setContent(this.imContentOf, this.imContentTemplate || this.template);

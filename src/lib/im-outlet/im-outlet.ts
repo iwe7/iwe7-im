@@ -2,7 +2,7 @@ import { Observable } from 'rxjs';
 import { tap, takeWhile, map, switchMap } from 'rxjs/operators';
 import { takeUntil } from 'rxjs/operators';
 import { filter } from 'rxjs/operators';
-import { ViewContainerRef, TemplateRef, ChangeDetectionStrategy, SimpleChanges, ChangeDetectorRef } from '@angular/core';
+import { ViewContainerRef, TemplateRef, ChangeDetectionStrategy, SimpleChanges, ChangeDetectorRef, Injector } from '@angular/core';
 import { Component, OnInit, ViewEncapsulation, ViewChild, AfterViewInit, Input } from '@angular/core';
 import { Iwe7CoreComponent } from 'iwe7-core';
 import { BetterScrollDirective } from 'iwe7-better-scroll';
@@ -33,8 +33,8 @@ export class ImOutletComponent extends Iwe7CoreComponent {
     @Input() sendMsgUrl: string;
 
     @ViewChild(BetterScrollDirective) betterScroll: BetterScrollDirective;
-    constructor(public cd: ChangeDetectorRef) {
-        super();
+    constructor(public cd: ChangeDetectorRef, injector: Injector) {
+        super(injector);
     }
 
     setContent(list: any, tpl: TemplateRef<any>) {
